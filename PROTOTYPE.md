@@ -39,5 +39,23 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 
 How you are breaking down the project and who is responsible for which parts.
 
-A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
+~A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)~
+
+To break up the work, both of us can share the work of making the visual game and then doing the extra features by ourselves. 
+
+* Make the visual game (Finish by 5/28/25 everything except animations)
+  * Make the board grids ( Both of us )
+  * Make the buttons that are safe and has mines (Both of us )
+  * Make the animations (This should be finished last as it is low priority so 5/31/25) (Both of us )
+   
+* Losing and Winning screen (Finish by 5/30/25) (Ricky)
+  
+* Scoreboard and leaderboard (Finish by 5/30/25) (Emily)
+  * A score of counting how many flags you have left
+  * A score of time
+  * Compare the timing of completing a certain difficulty. 
+  
+* Different difficulties (5/31/25) (Both )
+  
+* music and a way to share your game (Finish by 5/31/25) (Both)
 
