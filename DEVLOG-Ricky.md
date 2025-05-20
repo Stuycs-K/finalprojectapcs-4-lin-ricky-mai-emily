@@ -21,3 +21,6 @@ Added our ideas to the github repo and setup github. Also reviewed how to do git
 
 ### 2025-05-19 - Added Description in prototype and add dev log for last week and today. 
 Wrote all the ddescription for minesweeper and added this file's text. 
+
+### 2025-05-20 Added break down of timeline in prototype
+Wrote a breakdown of who's doing what, when is everything due, etc. 
