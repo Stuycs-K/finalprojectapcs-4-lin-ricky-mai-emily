@@ -26,6 +26,7 @@ Nice to have features:
 -Different difficulties 
 -Music and sharing your game
 -Leaderboard
+-Loading Screen
 
 
      
@@ -57,5 +58,5 @@ To break up the work, both of us can share the work of making the visual game an
   
 * Different difficulties (5/31/25) (Both )
   
-* music and a way to share your game (Finish by 5/31/25) (Both)
+* Loading screen, music,  and a way to share your game (Finish by 5/31/25) (Both)
 
