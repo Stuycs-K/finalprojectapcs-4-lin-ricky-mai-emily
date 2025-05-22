@@ -33,8 +33,9 @@ Nice to have features:
 # Project Design
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
+<img width="606" alt="Screenshot 2025-05-21 at 11 31 45 PM" src="https://github.com/user-attachments/assets/493b86e8-ea0b-446f-8949-63782b3b3496" />
 
-
+The Minesweeper class will include the board and the methods setup, draw, and mouseClicked to update the board as the player clicks on tiles. The Tile class has boolean variables to indicate the status of the tile, whether it is revealed or not, flagged or not, or if it is a mine. It also includes the method countAdjMines to count how many mines are adjacent to it, and the number of mines will ultimately be displayed on the tile. The Board class contains the 2D grid of tiles and creates the initial board. It includes methods to reveal a tile, place a flag on a tile, and determine if the game has been won or is over. 
     
 # Intended pacing:
 
