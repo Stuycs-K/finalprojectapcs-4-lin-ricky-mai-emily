@@ -24,3 +24,7 @@ Wrote all the ddescription for minesweeper and added this file's text.
 
 ### 2025-05-20 Added break down of timeline in prototype
 Wrote a breakdown of who's doing what, when is everything due, etc. 
+
+
+### 2025-05-22 Added the templates for the classes. 
+Made and uploaded files for the game along with the method names. 
