@@ -10,5 +10,6 @@ public class Board {
     this.totalMines = totalMines;
     grid = new Tile[rows][cols];
     
-  } 
+  }
+  
 }
