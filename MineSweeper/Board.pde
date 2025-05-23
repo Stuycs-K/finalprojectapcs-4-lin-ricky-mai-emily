@@ -1,4 +1,15 @@
-void setup(){
-size(1000,1000); // change this
-
+public class Board {
+  private int rows;
+  private int cols;
+  private int totalMines;
+  private Tile[][] grid;
+  
+  public void Board(int rows, int cols, int totalMines) {
+    this.rows = rows;
+    this.cols = cols;
+    this.totalMines = totalMines;
+    grid = new Tile[rows][cols];
+    
+  }
+  
 }

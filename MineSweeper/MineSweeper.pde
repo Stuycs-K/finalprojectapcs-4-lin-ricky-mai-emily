@@ -1,4 +1,14 @@
-void setup(){
-size(1000,1000); // change this
+Board board;
 
+void setup(){
+  size(1000,1000); // change this
+  
+}
+
+void draw(){
+  
+}
+
+void mouseClicked(){
+  
 }
