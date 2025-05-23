@@ -4,7 +4,7 @@ public class Board {
   private int totalMines;
   private Tile[][] grid;
   
-  public void Board(int rows, int cols, int totalMines) {
+  public Board(int rows, int cols, int totalMines) {
     this.rows = rows;
     this.cols = cols;
     this.totalMines = totalMines;
