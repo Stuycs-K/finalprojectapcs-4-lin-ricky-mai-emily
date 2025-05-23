@@ -4,5 +4,10 @@ public class Tile {
   private boolean isMine;
   private int adjacentMines;
   
+  public Tile(boolean mine) {
+    isMine = mine;
+    isRevealed = false;
+    isFlagged = false;
+  }
   
 }

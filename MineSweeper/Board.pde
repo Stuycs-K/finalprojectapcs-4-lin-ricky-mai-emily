@@ -10,6 +10,14 @@ public class Board {
     this.totalMines = totalMines;
     grid = new Tile[rows][cols];
     
+    for (int r = 0; r < rows; r++) {
+      for (int c = 0; c < cols; c++) {
+        int randNum = (int) (Math.random() * 8);
+        if (randNum == 1) {
+          grid[r][c] = new Tile(true);
+        }
+      }
+    }
   }
   
 }
