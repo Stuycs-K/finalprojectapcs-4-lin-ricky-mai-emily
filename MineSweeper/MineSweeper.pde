@@ -5,8 +5,8 @@ int squaresize;
 
 void setup(){
   size(1000,1000); // change this
-  rows = 10;
-  cols = 10;
+  rows = 8;
+  cols = 8;
   squaresize = width / cols;
   board = new Board(rows, cols, 10);
   
