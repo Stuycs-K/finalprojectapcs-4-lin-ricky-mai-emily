@@ -4,6 +4,12 @@ public class Board {
   private int totalMines;
   private Tile[][] grid;
   
+  public Board() {
+    rows = 10;
+    cols = 10;
+    totalMines = 10;
+  }
+  
   public Board(int rows, int cols, int totalMines) {
     this.rows = rows;
     this.cols = cols;
