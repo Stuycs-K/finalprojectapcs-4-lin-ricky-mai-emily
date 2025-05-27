@@ -22,6 +22,25 @@ void mouseClicked(){
   
 }
 
-void drawSquares(Board board){
+void drawBoard(){
+ int alternate = 0; 
+    for (int i = 0; i < rows; i++){
+
+      for (int x = 0; x < cols; x++){
+        if (x == 0 && alternate == 0){
+        alternate = 1;
+        }
+        else if (x == 0 && alternate == 1){
+        alternate = 0;
+        }
+       else {
+       
+       }
+      }
+}
+
+void drawSquares(Board board){ 
+  
+    }
   
 }
