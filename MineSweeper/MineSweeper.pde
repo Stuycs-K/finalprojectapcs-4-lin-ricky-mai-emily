@@ -2,6 +2,7 @@ Board board;
 int rows;
 int cols;
 int squaresize;
+boolean firstClick;
 
 void setup(){
   size(1000,1000); // change this

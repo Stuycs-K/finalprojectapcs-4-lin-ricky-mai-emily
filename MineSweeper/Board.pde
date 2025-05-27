@@ -19,8 +19,14 @@ public class Board {
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
         int randNum = (int) (Math.random() * 8);
-        if (randNum == 1) {
-          grid[r][c] = new Tile(true);
+        if (firstClick) {
+          grid[r][c] = new Tile(false, r, c);
+        }
+        else if (randNum == 1) {
+          grid[r][c] = new Tile(true, r, c);
+        }
+        else {
+          grid[r][c] = new Tile(false, r, c);
         }
       }
     }
