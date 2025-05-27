@@ -21,3 +21,6 @@ Created a UML Diagram with the different classes we will implement and added a d
 
 ### 2025-05-22 - Began Coding the Classes
 Created the class files in processing and added the instance variables and some method signatures. I created my own branch, emily, and familiarized myself with the process of merging branches and fixing merge conflicts. Also, I wrote the board constructor and began the setup and draw methods. (1 period + 30 mins)
+
+### 2025-05-23 - Started creating the board
+Worked on the board and tile constructor to initialize the board.
