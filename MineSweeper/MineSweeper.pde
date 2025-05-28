@@ -6,8 +6,8 @@ boolean firstClick;
 
 void setup(){
   size(1000,1000); // change this
-  rows = 10;
-  cols = 10;
+  rows = 8;
+  cols = 8;
   squaresize = width / cols;
   board = new Board(rows, cols, 10);
   
@@ -23,6 +23,24 @@ void mouseClicked(){
   
 }
 
-void drawSquares(Board board){
-  
+void drawBoard(){
+ int alternate = 0; 
+    for (int i = 0; i < rows; i++){
+
+      for (int x = 0; x < cols; x++){
+        if (x == 0 && alternate == 0){
+        alternate = 1;
+        }
+        else if (x == 0 && alternate == 1){
+        alternate = 0;
+        }
+       else {
+       
+       }
+      }
+    }
 }
+
+void drawSquares(Board board){ 
+  
+    }

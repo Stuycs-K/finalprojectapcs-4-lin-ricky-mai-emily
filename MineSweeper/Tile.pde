@@ -47,6 +47,5 @@ public class Tile extends Board {
       }
    }
    return count;
-  }
-  
+
 }
