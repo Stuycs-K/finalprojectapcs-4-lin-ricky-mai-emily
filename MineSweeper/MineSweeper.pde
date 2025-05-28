@@ -41,6 +41,16 @@ void drawBoard(){
     }
 }
 
-void drawSquares(Board board){ 
-  
+void drawSquares(Board board){
+  for (int r = 0; r < rows; r++) {
+    for (int c = 0; c < cols; c++) {
+      if (r + c % 2 == 0) {
+        fill(99, 184, 68);
+      }
+      else {
+        fill(135, 209, 82);
+      }
+      square(squaresize * cols, squaresize * rows, squaresize);
     }
+  }
+}
