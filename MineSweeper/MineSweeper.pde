@@ -16,9 +16,11 @@ void setup(){
 
 void draw(){
  // background(132, 194, 97);
-  //rect(0, 0, 1000, 150);
   drawSquares(board);
-  
+  rect(0, 0, width, 100);
+  fill(0, 0, 0);
+  text("Flags:", 200, 50);
+  text("Time:", 300, 50);
 }
 
 void mouseClicked(){
