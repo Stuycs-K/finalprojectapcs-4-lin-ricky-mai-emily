@@ -6,7 +6,7 @@ boolean firstClick;
 
 
 void setup(){
-  size(500,500); // change this
+  size(500, 600); // change this
   rows = 10;
   cols = 10;
   squaresize = width / cols;
@@ -36,7 +36,7 @@ void drawSquares(Board board){
       else {
         fill(135, 209, 82);
       }
-      square(squaresize * c, squaresize * r, squaresize);
+      square(squaresize * c, squaresize * r + 100, squaresize);
     }
   }
 }
