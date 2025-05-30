@@ -27,6 +27,7 @@ public class Tile extends Board {
   }
   
   public int getAdjacentMines(){
+    adjacentMines = countAdjMines();
     return adjacentMines;
   }
   
@@ -38,14 +39,18 @@ public class Tile extends Board {
     return column;
   }
   public int countAdjMines(){
-    int count = 0; 
-    for (int i = row - 1; i < row + 2; i++){
-      for (int x = column - 1; x < column + 2; x++){
-       if (getGrid()[i][x].getIsMine() == true){
-         count += 1;
-       }
-      }
-   }
+    int count = 0;
+    if (row < board.rows - 1 && getGrid()[row - 1][column].getIsMine() == true) {
+      count++;
+    }
+    if (
+   // for (int i = row - 1; i < row + 2; i++){
+   //   for (int x = column - 1; x < column + 2; x++){
+   //    if (getGrid()[i][x].getIsMine() == true){
+   //      count += 1;
+   //    }
+   //   }
+   //}
    return count;
   }
 }

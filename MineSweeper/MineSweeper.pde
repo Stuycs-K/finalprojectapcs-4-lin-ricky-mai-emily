@@ -35,6 +35,7 @@ void draw(){
   int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
   textSize(25);
   text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+  println(board.getGrid()[row][col].getIsMine());
 }
 }
 
