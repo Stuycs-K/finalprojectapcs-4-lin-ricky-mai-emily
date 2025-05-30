@@ -11,21 +11,40 @@ void setup(){
   cols = 10;
   squaresize = width / cols;
   board = new Board(rows, cols, 10);
+  drawSquares(board);
   
 }
 
 void draw(){
  // background(132, 194, 97);
-  drawSquares(board);
+  //drawSquares(board);
+  fill(99, 184, 68);
   rect(0, 0, width, 100);
   fill(0, 0, 0);
+  textSize(20);
   text("Flags:", 200, 50);
   text("Time:", 300, 50);
+  //for (int i = 0; i < rows;i++){
+  //for (int x = 0; x < cols; x ++){
+  //if(board.getGrid[i][x].)
+  //}
+  //}
+  if (mousePressed) {
+    int row = (mouseY - 100) / squaresize;
+  int col = mouseX / squaresize;
+  int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+  textSize(25);
+  text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+}
 }
 
-void mouseClicked(){
-  
-}
+//void mouseClicked(){
+//  int row = (mouseY - 100) / squaresize;
+//  int col = mouseX / squaresize;
+//  int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+//  textSize(25);
+//  text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+//}
 
 void drawSquares(Board board){
   for (int r = 0; r < rows; r++) {
