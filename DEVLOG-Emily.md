@@ -33,3 +33,6 @@ I worked on the method drawBoard by adding a rectangle to act as the header and 
 
 ### 2025-05-29 - Header Creation
 Fixed the method drawSquares to create a checkboard pattern of alternating colored squares. Made a header at the top of the screen that will show the time and flag count, and fixed the screen sizing to ensure all the rows and columns are shown. (1 period + 30 mins)
+
+### 2025-05-30 - Tried to implement clicking of tiles
+When the user clicked, we used the x and y coordinates to try to make the number of adjacent mines appear. Tried to fix our countAdjMines method, but keep getting a nullpointerexception. (1 period + 30 mins)
