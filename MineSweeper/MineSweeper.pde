@@ -10,7 +10,7 @@ void setup(){
   rows = 10;
   cols = 10;
   squaresize = width / cols;
-  board = new Board(rows, cols, 10);
+  board = new Board(rows, cols, 20);
   drawSquares(board);
   
 }
