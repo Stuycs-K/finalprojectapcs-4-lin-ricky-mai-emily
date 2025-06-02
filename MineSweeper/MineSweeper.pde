@@ -36,8 +36,29 @@ void draw(){
     if (row >= 0 && row < board.rows && col >= 0 && col < board.cols) {
       numAdjMines = board.getGrid()[row][col].getAdjacentMines();
     }
+    if (board.getGrid()[row][col].getIsMine()){
+    fill (235, 91, 91);
+    square(squaresize * col , squaresize * row + 100, squaresize);
+    }
+    if (!board.getGrid()[row][col].getIsMine()){
+      fill(235, 220, 91);
+      square(squaresize * col, squaresize * row + 100, squaresize);
+      
+      for (int r = row - 1; r <= row + 1; r++) {
+        for (int c = col - 1; c <= col + 1; c++) {
+          if ( r >= 0 && r < board.rows && c >= 0 && c < board.cols) {
+            numAdjMines = board.getGrid()[r][c].getAdjacentMines();
+            fill(0, 0, 0);
+            text("" + numAdjMines, c * 50 + 20, r * 50 + 120);
+           
+          }
+        }
+       }
+      }
+    
+    
   textSize(25);
-  text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+  //text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
   println(board.getGrid()[row][col].getIsMine());
 }
 }

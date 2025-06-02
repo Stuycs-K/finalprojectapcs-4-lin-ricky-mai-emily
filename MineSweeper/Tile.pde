@@ -44,7 +44,7 @@ public class Tile extends Board {
     for (int r = row - 1; r <= row + 1; r++) {
       for (int c = column - 1; c <= column + 1; c++) {
         if ( r >= 0 && r < board.rows && c >= 0 && c < board.cols) {
-          if (getGrid()[r][c] != null && getGrid()[r][c].getIsMine()) {
+          if (board.getGrid()[r][c] != null && board.getGrid()[r][c].getIsMine()) {
             count++;
           }
         }
