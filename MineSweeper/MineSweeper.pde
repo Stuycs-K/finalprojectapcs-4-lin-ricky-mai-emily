@@ -31,8 +31,11 @@ void draw(){
   //}
   if (mousePressed) {
     int row = (mouseY - 100) / squaresize;
-  int col = mouseX / squaresize;
-  int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+    int col = mouseX / squaresize;
+    int numAdjMines = 0;
+    if (row >= 0 && row < board.rows && col >= 0 && col < board.cols) {
+      numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+    }
   textSize(25);
   text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
   println(board.getGrid()[row][col].getIsMine());
