@@ -22,10 +22,10 @@ public class Board {
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
         int randNum = (int) (Math.random() * 5);
-        if (firstClick) {
-          grid[r][c] = new Tile(false, r, c);
-        }
-        else if (randNum == 1 && counter != totalMines ) {
+        //if (firstClick) {
+        //  grid[r][c] = new Tile(false, r, c);
+        //}
+        if (randNum == 1 && counter != totalMines ) {
           grid[r][c] = new Tile(true, r, c);
           counter++;
         }
@@ -66,5 +66,27 @@ public class Board {
       }
     textSize(25);
     println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
+  }
+  
+    
+  public void firstClick(int row, int col) {
+    boolean[][] visited = new boolean[board.rows][board.cols];
+    floodFill(row, col, visited);
+  }
+  
+  public void floodFill(int row, int col, boolean[][] visited) {
+    if (row >= 0 && row < board.rows && col >= 0 && col < board.cols) {
+      if (board.getGrid()[row][col].getAdjacentMines() == 0) {
+        if (!visited[row][col]) {
+          visited[row][col] = true;
+          fill(235, 220, 91); //yellow
+          square(squaresize * col, squaresize * row + 100, squaresize);
+          floodFill(row + 1, col, visited);
+          floodFill(row - 1, col, visited);
+          floodFill(row, col + 1, visited);
+          floodFill(row, col - 1, visited);
+        }
+      }
+    }
   }
 }
