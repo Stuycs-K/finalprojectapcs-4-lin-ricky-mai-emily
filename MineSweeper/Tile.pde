@@ -11,7 +11,7 @@ public class Tile extends Board {
     isFlagged = false;
     isMine = mine;
     this.row = row;
-    this.column = column; 
+    this.column = column;
   }
   
   public boolean getIsRevealed(){
@@ -27,6 +27,7 @@ public class Tile extends Board {
   }
   
   public int getAdjacentMines(){
+    adjacentMines = countAdjMines();
     return adjacentMines;
   }
   
@@ -37,15 +38,19 @@ public class Tile extends Board {
   public int getColumn (){
     return column;
   }
+  
   public int countAdjMines(){
-    int count = 0; 
-    for (int i = row - 1; i < row + 2; i++){
-      for (int x = column - 1; x < column + 2; x++){
-       if (getGrid()[i][x].getIsMine() == true){
-         count += 1;
-       }
+    int count = 0;
+    for (int r = row - 1; r <= row + 1; r++) {
+      for (int c = column - 1; c <= column + 1; c++) {
+        if ( r >= 0 && r < board.rows && c >= 0 && c < board.cols) {
+          if (board.getGrid()[r][c] != null && board.getGrid()[r][c].getIsMine()) {
+            count++;
+          }
+        }
       }
-   }
-   return count;
-
+    }
+    return count;
+  }
+  
 }
