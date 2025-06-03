@@ -36,3 +36,6 @@ Fixed the method drawSquares to create a checkboard pattern of alternating color
 
 ### 2025-05-30 - Tried to implement clicking of tiles
 When the user clicked, we used the x and y coordinates to try to make the number of adjacent mines appear. Tried to fix our countAdjMines method, but keep getting a nullpointerexception. (1 period + 30 mins)
+
+### 2025-06-02 - Worked on processing a user's click
+Fixed our countAdjMines method that was previously giving us nullpointerexceptions. Made numbers appear on the tiles and the type(color) of tile appear when clicked on. Also, I wrote and implemented the method floodFill and firstClick to process the user's first click. Tiles with no adjacent mines will be flood filled on the first click. Organized format of the code for clarity and removed unnecessary code. (1 period + 50 mins)
