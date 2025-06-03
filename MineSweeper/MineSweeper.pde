@@ -25,16 +25,17 @@ void draw(){
   if (mousePressed) {
     int row = (mouseY - 100) / squaresize;
     int col = mouseX / squaresize;
-    if (firstClick && !board.getGrid()[row][col].getIsMine()) {
-      board.firstClick(row, col);
-      firstClick = false;
-    }
-    else if (firstClick && board.getGrid()[row][col].getIsMine()) {
-      board = new Board(rows, cols, 20); //regenerate board if the first click tile is a mine
-    }
-    else { 
-      board.revealTile(row, col);
-    }
+    board.click(row, col);
+    //if (firstClick && !board.getGrid()[row][col].getIsMine()) {
+    //  board.firstClick(row, col);
+    //  firstClick = false;
+    //}
+    //else if (firstClick && board.getGrid()[row][col].getIsMine()) {
+    //  board = new Board(rows, cols, 20); //regenerate board if the first click tile is a mine
+    //}
+    //else { 
+    //  board.revealTile(row, col);
+    //}
   }
 }
 
