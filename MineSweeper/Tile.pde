@@ -51,12 +51,6 @@ public class Tile extends Board {
       }
     }
     return count;
-   // for (int i = row - 1; i < row + 2; i++){
-   //   for (int x = column - 1; x < column + 2; x++){
-   //    if (getGrid()[i][x].getIsMine() == true){
-   //      count += 1;
-   //    }
-   //   }
-   //}
   }
+  
 }
