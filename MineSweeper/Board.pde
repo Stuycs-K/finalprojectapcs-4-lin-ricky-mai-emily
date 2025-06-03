@@ -85,7 +85,18 @@ public class Board {
           floodFill(row - 1, col, visited);
           floodFill(row, col + 1, visited);
           floodFill(row, col - 1, visited);
+          floodFill(row + 1, col + 1, visited);
+          floodFill(row - 1, col - 1, visited);
+          floodFill(row + 1, col - 1, visited);
+          floodFill(row - 1, col + 1, visited);
         }
+      }
+      if (board.getGrid()[row][col].getAdjacentMines() != 0) {
+        fill(235, 220, 91); //yellow
+        square(squaresize * col, squaresize * row + 100, squaresize);
+        int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+        fill(0, 0, 0);
+        text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
       }
     }
   }
