@@ -39,3 +39,6 @@ When the user clicked, we used the x and y coordinates to try to make the number
 
 ### 2025-06-02 - Worked on processing a user's click
 Fixed our countAdjMines method that was previously giving us nullpointerexceptions. Made numbers appear on the tiles and the type(color) of tile appear when clicked on. Also, I wrote and implemented the method floodFill and firstClick to process the user's first click. Tiles with no adjacent mines will be flood filled on the first click. Organized format of the code for clarity and removed unnecessary code. (1 period + 50 mins)
+
+### 2025-06-03 - Continued working on processing a user's click
+Edited floodFill method to make the number of adjacent mines appear on tiles located on the boundaries when flood filled. Combined methods revealTile and firstClick into one method, click, to process a user's click and reveal the neccesary amount of tiles. Also, I made the method placeFlag to place a flag on a tile when a user right clicks and worked on being able to remove the flag when right clicked again. (1 period + 30 mins)
