@@ -21,3 +21,24 @@ Created a UML Diagram with the different classes we will implement and added a d
 
 ### 2025-05-22 - Began Coding the Classes
 Created the class files in processing and added the instance variables and some method signatures. I created my own branch, emily, and familiarized myself with the process of merging branches and fixing merge conflicts. Also, I wrote the board constructor and began the setup and draw methods. (1 period + 30 mins)
+
+### 2025-05-23 - Started creating the board
+Worked on the board and tile constructor to initialize the board. (1 period)
+
+### 2025-05-27 - Continued making the board
+Continued working on the board constructor and added a firstclick variable because we don't want the firstclick to be a mine. I merged my partner's and my branch to keep it up to date with the main. Also, I wrote drawSquares to fill the screen with alternating colored squares. (1 period + 30 mins)
+
+### 2025-05-28 - Continued making the visual board
+I worked on the method drawBoard by adding a rectangle to act as the header and calling drawSquares. (1 period)
+
+### 2025-05-29 - Header Creation
+Fixed the method drawSquares to create a checkboard pattern of alternating colored squares. Made a header at the top of the screen that will show the time and flag count, and fixed the screen sizing to ensure all the rows and columns are shown. (1 period + 30 mins)
+
+### 2025-05-30 - Tried to implement clicking of tiles
+When the user clicked, we used the x and y coordinates to try to make the number of adjacent mines appear. Tried to fix our countAdjMines method, but keep getting a nullpointerexception. (1 period + 30 mins)
+
+### 2025-06-02 - Worked on processing a user's click
+Fixed our countAdjMines method that was previously giving us nullpointerexceptions. Made numbers appear on the tiles and the type(color) of tile appear when clicked on. Also, I wrote and implemented the method floodFill and firstClick to process the user's first click. Tiles with no adjacent mines will be flood filled on the first click. Organized format of the code for clarity and removed unnecessary code. (1 period + 50 mins)
+
+### 2025-06-03 - Continued working on processing a user's click
+Edited floodFill method to make the number of adjacent mines appear on tiles located on the boundaries when flood filled. Combined methods revealTile and firstClick into one method, click, to process a user's click and reveal the neccesary amount of tiles. Also, I made the method placeFlag to place a flag on a tile when a user right clicks and worked on being able to remove the flag when right clicked again. (1 period + 30 mins)
