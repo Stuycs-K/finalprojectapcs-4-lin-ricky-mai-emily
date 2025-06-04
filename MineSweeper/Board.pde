@@ -3,6 +3,7 @@ public class Board {
   private int cols;
   private int totalMines;
   private Tile[][] grid;
+  private boolean[][] flagPlaced;
   private final color LIGHT_GREEN = color(135, 209, 82);
   private final color DARK_GREEN = color(99, 184, 68);
   private final color BLACK = color(0, 0, 0);
@@ -17,6 +18,7 @@ public class Board {
     this.rows = rows;
     this.cols = cols;
     this.totalMines = totalMines;
+    flagPlaced = new boolean[rows][cols];
     grid = new Tile[rows][cols];
     int counter = 0; 
     for (int r = 0; r < rows; r++) {
@@ -126,8 +128,19 @@ public class Board {
   }
   
   public void placeFlag(int row, int col) {
-    fill (235, 91, 91);
-    rect(squaresize * col + 10, squaresize * row + 110, 5, 30);
-    triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
+    if (!flagPlaced[row][col]) {
+      fill (235, 91, 91);
+      rect(squaresize * col + 10, squaresize * row + 110, 5, 30);
+      triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
+      flagPlaced[row][col] = true;
+    }
+    else if (flagPlaced[row][col]) {
+      fill(235, 220, 91); //yellow
+      square(squaresize * col, squaresize * row + 100, squaresize);
+      int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
+      fill(0, 0, 0);
+      text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+      flagPlaced[row][col] = false;
+    }
   }
 }
