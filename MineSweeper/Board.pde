@@ -67,7 +67,7 @@ public class Board {
        }
       }
     textSize(25);
-    println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
+    //println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
   }
   
     
@@ -133,13 +133,16 @@ public class Board {
       rect(squaresize * col + 10, squaresize * row + 110, 5, 30);
       triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
       flagPlaced[row][col] = true;
+      println(flagPlaced[row][col]);
     }
     else if (flagPlaced[row][col]) {
-      fill(235, 220, 91); //yellow
+      if ((row + col) % 2 == 0) {
+        fill(99, 184, 68);
+      }
+      else {
+        fill(135, 209, 82);
+      }
       square(squaresize * col, squaresize * row + 100, squaresize);
-      int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
-      fill(0, 0, 0);
-      text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
       flagPlaced[row][col] = false;
     }
   }
