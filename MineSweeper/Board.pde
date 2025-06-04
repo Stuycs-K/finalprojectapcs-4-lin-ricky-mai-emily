@@ -124,4 +124,10 @@ public class Board {
       }
     }
   }
+  
+  public void placeFlag(int row, int col) {
+    fill (235, 91, 91);
+    rect(squaresize * col + 10, squaresize * row + 110, 5, 30);
+    triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
+  }
 }

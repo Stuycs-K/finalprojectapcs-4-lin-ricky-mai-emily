@@ -25,7 +25,11 @@ void draw(){
   if (mousePressed) {
     int row = (mouseY - 100) / squaresize;
     int col = mouseX / squaresize;
-    board.click(row, col);
+    if (mouseButton == RIGHT) {
+      board.placeFlag(row, col);
+    }
+    else {
+      board.click(row, col);
     //if (firstClick && !board.getGrid()[row][col].getIsMine()) {
     //  board.firstClick(row, col);
     //  firstClick = false;
@@ -36,6 +40,7 @@ void draw(){
     //else { 
     //  board.revealTile(row, col);
     //}
+    }
   }
 }
 
