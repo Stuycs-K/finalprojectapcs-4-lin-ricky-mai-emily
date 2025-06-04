@@ -93,6 +93,8 @@ public class Board {
     if (!board.getGrid()[row][col].getIsMine()){
       fill(235, 220, 91); //yellow
       square(squaresize * col, squaresize * row + 100, squaresize);
+      fill(0, 0, 0);
+      text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
     }
   }
   
