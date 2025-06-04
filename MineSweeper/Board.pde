@@ -4,6 +4,7 @@ public class Board {
   private int totalMines;
   private Tile[][] grid;
   private boolean[][] flagPlaced;
+  private boolean[][] tileRevealed;
   private final color LIGHT_GREEN = color(135, 209, 82);
   private final color DARK_GREEN = color(99, 184, 68);
   private final color BLACK = color(0, 0, 0);
@@ -19,6 +20,7 @@ public class Board {
     this.cols = cols;
     this.totalMines = totalMines;
     flagPlaced = new boolean[rows][cols];
+    tileRevealed = new boolean[rows][cols];
     grid = new Tile[rows][cols];
     int counter = 0; 
     for (int r = 0; r < rows; r++) {
