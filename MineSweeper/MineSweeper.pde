@@ -3,6 +3,7 @@ int rows;
 int cols;
 int squaresize;
 boolean firstClick = true;
+boolean lost = false; 
 
 
 void setup(){
@@ -43,9 +44,15 @@ void mouseClicked() {
     text("Play again? Press: ", cols * squaresize / 2, rows * squaresize /2 + 30 );
     text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
-  if (keyPressed){
+    lost = true; 
+
+    }
+}
+
+void keyPressed(){
+  if (lost){
     if (key == 'y'){
-      background(256);
+      background(255);
   }
     else if (key == 'n'){
       System.out.println("4");
@@ -53,7 +60,6 @@ void mouseClicked() {
   
   }
 }
-    }
 }
   
 
