@@ -65,7 +65,6 @@ public class Board {
        }
       }
     textSize(25);
-    println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
   }
   
     

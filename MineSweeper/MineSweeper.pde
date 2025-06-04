@@ -30,23 +30,23 @@ void draw(){
     background(51);
     fill(255,255,255);
     text("You Lost", cols * squaresize / 2, rows * squaresize /2);
-    text("Play again?", cols * squaresize / 2, rows * squaresize /2 + 30 );
-    text("Yes", cols * squaresize / 2, rows * squaresize /2 + 50 );
-    text("No", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
-    if (mousePressed){
-    int x = mouseY;
-    int y = mouseX;
-    if (x < cols * squaresize / 2 + 50 && x >= cols * squaresize / 2 && y <= rows * squaresize / 2 + 60 && y > rows * squaresize / 2 + 30){
-     background(256);
-     
-    }
-    else if (x < cols * squaresize / 2 + 80 && x >= cols * squaresize / 2 + 50 && y <= rows * squaresize / 2 + 60 && y > rows * squaresize / 2 + 30){
-    System.exit(0);
-    }
+    text("Play again? Press: ", cols * squaresize / 2, rows * squaresize /2 + 30 );
+    text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
+    text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
+  if (keyPressed){
+    if (key == 'y'){
+      background(256);
+  }
+    else if (key == 'n'){
+      System.out.println("4");
+      System.exit(0);
+  
+  }
+}
     }
   
     
-    }
+    
     else{
     if (firstClick && !board.getGrid()[row][col].getIsMine()) {
       board.firstClick(row, col);
@@ -61,6 +61,7 @@ void draw(){
     }
   }
 }
+
 
 void drawSquares(Board board){
   for (int r = 0; r < rows; r++) {
