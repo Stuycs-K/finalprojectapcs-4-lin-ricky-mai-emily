@@ -22,11 +22,20 @@ void draw(){
   textSize(20);
   text("Flags:", 200, 50);
   text("Time:", 300, 50);
-  if (mousePressed) {
-    int row = (mouseY - 100) / squaresize;
-    int col = mouseX / squaresize;
+  
+}
 
-    if (board.getGrid()[row][col].getIsMine()){
+void mouseClicked() {
+  int row = (mouseY - 100) / squaresize;
+  int col = mouseX / squaresize;
+  if (mouseButton == RIGHT) {
+    board.placeFlag(row, col);
+  }
+  else {
+    board.click(row, col);
+    
+  }
+   if (board.getGrid()[row][col].getIsMine()){
     
     background(51);
     fill(255,255,255);
@@ -45,30 +54,8 @@ void draw(){
   }
 }
     }
-  
-    
-    
-    else{
-    if (firstClick && !board.getGrid()[row][col].getIsMine()) {
-      board.firstClick(row, col);
-      firstClick = false;
-    }
-
-    if (firstClick && !board.getGrid()[row][col].getIsMine()) {
-      board.firstClick(row, col);
-      firstClick = false;
-    }
-
-    else if (firstClick && board.getGrid()[row][col].getIsMine()) {
-      board = new Board(rows, cols, 20); //regenerate board if the first click tile is a mine
-    }
-    else { 
-      board.revealTile(row, col);
-    }
-
-    }
-  }
 }
+  
 
 
 
