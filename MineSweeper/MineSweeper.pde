@@ -4,6 +4,8 @@ int cols;
 int squaresize;
 boolean firstClick = true;
 boolean lost = false; 
+int tick = 0; 
+int numFlag; 
 
 
 void setup(){
@@ -13,16 +15,19 @@ void setup(){
   squaresize = width / cols;
   board = new Board(rows, cols, 20);
   drawSquares(board);
+  numFlag = 20; 
+  // make sure the parameters become changable and are variables instead 
   
 }
 
 void draw(){
+  tick++;
   fill(99, 184, 68); //green header color
   rect(0, 0, width, 100);
   fill(0, 0, 0); //black for text
   textSize(20);
-  text("Flags:", 200, 50);
-  text("Time:", 300, 50);
+  text("Flags: " + numFlag, 200, 50);
+  text("Time: " + tick / 60, 300, 50);
   
 }
 
