@@ -3,8 +3,7 @@ int rows;
 int cols;
 int squaresize;
 boolean firstClick = true;
-boolean lost = false; 
-
+boolean lost = false;
 
 void setup(){
   size(500, 600); // change this
@@ -23,20 +22,10 @@ void draw(){
   textSize(20);
   text("Flags:", 200, 50);
   text("Time:", 300, 50);
-  
-}
-
-void mouseClicked() {
-  int row = (mouseY - 100) / squaresize;
-  int col = mouseX / squaresize;
-  if (mouseButton == RIGHT) {
-    board.placeFlag(row, col);
-  }
-  else if (!board.flagPlaced[row][col]) {
-    board.click(row, col);
-    
-  }
-   if (board.getGrid()[row][col].getIsMine()){
+  if (mousePressed) {
+    int row = (mouseY - 100) / squaresize;
+    int col = mouseX / squaresize;
+    if (board.getGrid()[row][col].getIsMine()){
     
     background(51);
     fill(255,255,255);
@@ -45,28 +34,35 @@ void mouseClicked() {
     text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
     lost = true; 
-
     }
+  
+    
+    
+    else{
+    if (firstClick && !board.getGrid()[row][col].getIsMine()) {
+      board.firstClick(row, col);
+      firstClick = false;
+    }
+    else if (firstClick && board.getGrid()[row][col].getIsMine()) {
+      board = new Board(rows, cols, 20); //regenerate board if the first click tile is a mine
+    }
+    else { 
+      board.revealTile(row, col);
+    }
+    }
+  }
 }
-
-void keyPressed(){
+  void keyPressed(){
   if (lost){
-    if (key == 'y'){
-      background(255);
-  }
-    else if (key == 'n'){
-      System.out.println("4");
-      System.exit(0);
+  if (key == 'y'){
+  background(255);
   
   }
-}
-}
-  
-
-
-
-  
-
+  else if (key == 'n'){
+  System.exit(0);
+  }
+  }
+  }
 
 
 void drawSquares(Board board){
