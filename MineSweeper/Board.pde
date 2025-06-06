@@ -99,7 +99,9 @@ public class Board {
       fill(235, 220, 91); //yellow
       square(squaresize * col, squaresize * row + 100, squaresize);
       fill(0, 0, 0);
-      text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+      if (numAdjMines != 0) {
+        text("" + numAdjMines, col * 50 + 20, row * 50 + 120);
+      }
     }
   }
   
@@ -122,6 +124,7 @@ public class Board {
         }
       }
       if (board.getGrid()[row][col].getAdjacentMines() != 0) {
+        tileRevealed[row][col] = true;
         fill(235, 220, 91); //yellow
         square(squaresize * col, squaresize * row + 100, squaresize);
         int numAdjMines = board.getGrid()[row][col].getAdjacentMines();
