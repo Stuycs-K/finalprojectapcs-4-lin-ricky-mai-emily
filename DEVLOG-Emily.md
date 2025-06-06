@@ -42,3 +42,6 @@ Fixed our countAdjMines method that was previously giving us nullpointerexceptio
 
 ### 2025-06-03 - Continued working on processing a user's click
 Edited floodFill method to make the number of adjacent mines appear on tiles located on the boundaries when flood filled. Combined methods revealTile and firstClick into one method, click, to process a user's click and reveal the neccesary amount of tiles. Also, I made the method placeFlag to place a flag on a tile when a user right clicks and worked on being able to remove the flag when right clicked again. (1 period + 30 mins)
+
+### 2025-06-04 - Worked on mouse clicking and flag placing
+Made the method mouseClicked() instead of checking for mousePressed because it prevents the user from dragging the mouse to reveal tiles. Fixed issues with the flag placing such as being able to place flags on revealed tiles and revealing tiles with a flag on it by creating a tileRevealed variable. (1 period + 30 mins)
