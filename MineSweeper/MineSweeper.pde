@@ -37,7 +37,7 @@ void mouseClicked() {
   if (mouseButton == RIGHT) {
     board.placeFlag(row, col);
   }
-  else if (mouseButton == LEFT && !board.flagPlaced[row][col] && board.getGrid()[row][col].getIsMine()){
+  else if (!firstClick && mouseButton == LEFT && !board.flagPlaced[row][col] && board.getGrid()[row][col].getIsMine()){
     background(51);
     fill(255,255,255);
     text("You Lost", cols * squaresize / 2, rows * squaresize /2);
@@ -49,6 +49,7 @@ void mouseClicked() {
   else if (!board.flagPlaced[row][col]) {
     board.click(row, col);
   }
+  firstClick = false;
 }
 
 void keyPressed(){
