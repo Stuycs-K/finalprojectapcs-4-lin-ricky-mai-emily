@@ -37,21 +37,18 @@ void mouseClicked() {
   if (mouseButton == RIGHT) {
     board.placeFlag(row, col);
   }
-  else if (!board.flagPlaced[row][col]) {
-    board.click(row, col);
-    
-  }
-   if (board.getGrid()[row][col].getIsMine()){
-    
+  else if (mouseButton == LEFT && !board.flagPlaced[row][col] && board.getGrid()[row][col].getIsMine()){
     background(51);
     fill(255,255,255);
     text("You Lost", cols * squaresize / 2, rows * squaresize /2);
     text("Play again? Press: ", cols * squaresize / 2, rows * squaresize /2 + 30 );
     text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
-    lost = true; 
-
-    }
+    lost = true;
+   }
+  else if (!board.flagPlaced[row][col]) {
+    board.click(row, col);
+  }
 }
 
 void keyPressed(){
