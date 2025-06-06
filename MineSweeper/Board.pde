@@ -147,6 +147,7 @@ public class Board {
       triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
       flagPlaced[row][col] = true;
       println(flagPlaced[row][col]);
+      numFlag--;
     }
     else if (flagPlaced[row][col]) {
       if ((row + col) % 2 == 0) {
@@ -157,6 +158,7 @@ public class Board {
       }
       square(squaresize * col, squaresize * row + 100, squaresize);
       flagPlaced[row][col] = false;
+      numFlag++;
     }
   }
 }
