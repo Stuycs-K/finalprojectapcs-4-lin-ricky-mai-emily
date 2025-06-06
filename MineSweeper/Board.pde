@@ -95,6 +95,7 @@ public class Board {
       square(squaresize * col , squaresize * row + 100, squaresize);
     }
     if (!board.getGrid()[row][col].getIsMine()){
+      tileRevealed[row][col] = true;
       fill(235, 220, 91); //yellow
       square(squaresize * col, squaresize * row + 100, squaresize);
       fill(0, 0, 0);
@@ -107,6 +108,7 @@ public class Board {
       if (board.getGrid()[row][col].getAdjacentMines() == 0) {
         if (!visited[row][col]) {
           visited[row][col] = true;
+          tileRevealed[row][col] = true;
           fill(235, 220, 91); //yellow
           square(squaresize * col, squaresize * row + 100, squaresize);
           floodFill(row + 1, col, visited);
@@ -130,7 +132,7 @@ public class Board {
   }
   
   public void placeFlag(int row, int col) {
-    if (!flagPlaced[row][col]) {
+    if (!flagPlaced[row][col] && !tileRevealed[row][col]) {
       fill (235, 91, 91);
       rect(squaresize * col + 10, squaresize * row + 110, 5, 30);
       triangle(squaresize * col + 10, squaresize * row + 110, squaresize * col + 10, squaresize * row + 120, squaresize * col + 30, squaresize * row + 120); 
