@@ -50,7 +50,7 @@ void mouseClicked() {
   if (mouseButton == RIGHT) {
     board.placeFlag(row, col);
   }
-  else {
+  else if (!board.flagPlaced[row][col]) {
     board.click(row, col);
   }
 }
