@@ -4,6 +4,7 @@ int cols;
 int squaresize;
 boolean firstClick = true;
 boolean lost = false; 
+boolean won = false;
 int tick = 0; 
 int numFlag; 
 String difficulty = "medium";
@@ -14,22 +15,18 @@ void setup(){
   rows = 10;
   cols = 10;
   squaresize = width / cols;
-  if (difficulty.equals("medium")) {
-    board = new Board(rows, cols, 20);
-  }
-  else if (difficulty.equals("easy")) {
-    board = new Board(rows, cols, 10);
-  }
-  else if (difficulty.equals("hard")) {
-    board = new Board(rows, cols, 30);
-  }
-  drawSquares(board);
+  board = new Board(rows, cols, 20);
   numFlag = 20; 
+  drawSquares(board);
   // make sure the parameters become changable and are variables instead 
-
 }
 
 void draw(){
+  if (won) {
+    background(0);
+    fill(255,255,255);
+    text("You Won!", cols * squaresize / 2, rows * squaresize /2);
+  }
   tick++;
   fill(99, 184, 68); //green header color
   rect(0, 0, width, 100);
@@ -38,18 +35,16 @@ void draw(){
   text("Flags: " + numFlag, 200, 50);
   text("Time: " + tick / 60, 300, 50);
   int count = 0;
-  int notMines = board.getGrid().length * board.getGrid()[0].length - board.getTotalMines();
-  for (int i = 0 ; i < board.getGrid().length; i ++){
-    for(int x = 0; x < board.getGrid()[0].length; x++){
-      if (!board.getGrid()[i][x].getIsMine() && board.getGrid()[i][x].getIsRevealed() ){
+  int notMines = (rows * cols) - board.getTotalMines();
+  for (int r = 0 ; r < rows; r++){
+    for (int c = 0; c < cols; c++){
+      if (!board.getGrid()[r][c].getIsMine() && board.tileRevealed[r][c]){
         count++;
       }
     }
   }
   if (count == notMines){
-    background(0);
-    fill(255,255,255);
-    text("You Won!", cols * squaresize / 2, rows * squaresize /2);
+    won = true;
   }
 }
 
@@ -80,12 +75,27 @@ void mouseClicked() {
 void keyPressed(){
   if (key == 'e') {
     difficulty = "easy";
+    board = new Board(rows, cols, 10);
+    numFlag = 10;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (key == 'm') {
     difficulty = "medium";
+    board = new Board(rows, cols, 20);
+    numFlag = 20;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (key == 'h') {
     difficulty = "hard";
+    board = new Board(rows, cols, 30);
+    numFlag = 30;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (lost){
     if (key == 'y'){
