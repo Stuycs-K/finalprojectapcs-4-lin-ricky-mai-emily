@@ -46,4 +46,10 @@ Edited floodFill method to make the number of adjacent mines appear on tiles loc
 ### 2025-06-04 - Worked on mouse clicking and flag placing
 Made the method mouseClicked() instead of checking for mousePressed because it prevents the user from dragging the mouse to reveal tiles. Fixed issues with the flag placing such as being able to place flags on revealed tiles and revealing tiles with a flag on it by creating a tileRevealed variable. (1 period + 30 mins)
 
+### 2025-06-06 - Fixed problems with clicking on mines
+Worked with partner to merge our branches. Fixed a problem with clicking on a mine tile that has a flag on it. Also, fixed a problem with the first click being a mine and made the first click not a mine. (1 period)
+
+### 2025-06-08 - Finishing final project
+Fixed bugs and things not working properly in our code. For example, I fixed the first click revealing just one tile so I made the method firstClick to reveal a patch of land. Additionally, I fixed the Board constructor to display the correct number of mines, added a difficulty level selection, and fixed winning screen. Added updated uml diagram to prototype and worked on video with partner. (5.5 hours)
+
 I believe this document accurately reflects the contributions of my teammate. - Ricky 
