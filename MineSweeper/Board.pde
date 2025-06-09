@@ -81,11 +81,13 @@ public class Board {
     
   public void click(int row, int col) {
     //if firstClick is a mine, regenerate the board
-    if (firstClick && board.getGrid()[row][col].getIsMine()) {
-      board = new Board(rows, cols, 20);
+    if (firstClick) {
+      while (board.getGrid()[row][col].getIsMine() || board.getGrid()[row][col].getAdjacentMines() > 0) {
+        board = new Board(rows, cols, 20);
+      }
     }
     //if firstClick is not a mine, game continues
-    else if (firstClick && !board.getGrid()[row][col].getIsMine()) {
+    else if (firstClick && !board.getGrid()[row][col].getIsMine() && board.getGrid()[row][col].getAdjacentMines() == 0) {
       firstClick = false;
     }
     else {
