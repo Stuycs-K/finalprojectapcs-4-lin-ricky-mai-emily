@@ -37,17 +37,16 @@ void draw(){
   textSize(20);
   text("Flags: " + numFlag, 200, 50);
   text("Time: " + tick / 60, 300, 50);
-  int count = 0; 
+  int count = 0;
   int notMines = board.getGrid().length * board.getGrid()[0].length - board.getTotalMines();
   for (int i = 0 ; i < board.getGrid().length; i ++){
     for(int x = 0; x < board.getGrid()[0].length; x++){
-    if (!board.getGrid()[i][x].getIsMine() && board.getGrid()[i][x].getIsRevealed() ){
-      count++;
-    }
+      if (!board.getGrid()[i][x].getIsMine() && board.getGrid()[i][x].getIsRevealed() ){
+        count++;
+      }
     }
   }
   if (count == notMines){
-    
     background(0);
     fill(255,255,255);
     text("You Won!", cols * squaresize / 2, rows * squaresize /2);
@@ -73,9 +72,9 @@ void mouseClicked() {
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
     lost = true;
    }
-  else if (!board.flagPlaced[row][col]) {
-    board.click(row, col);
-  }
+   else if (!board.flagPlaced[row][col]) {
+     board.click(row, col);
+   }
 }
 
 void keyPressed(){
@@ -88,7 +87,6 @@ void keyPressed(){
   if (key == 'h') {
     difficulty = "hard";
   }
-  
   if (lost){
     if (key == 'y'){
       background(255);
@@ -96,7 +94,6 @@ void keyPressed(){
     else if (key == 'n'){
       System.out.println("4");
       System.exit(0);
-
     }
   }
   if (key == 'w'){

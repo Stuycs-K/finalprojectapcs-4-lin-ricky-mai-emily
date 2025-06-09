@@ -63,16 +63,10 @@ public class Board {
             text("" + numAdjMines, c * 50 + 20, r * 50 + 120);
           }
         }
-       }
       }
+    }
     textSize(25);
-
-
-  //  println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
-
-
     //println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
-
   }
   
   public void firstClick(int row, int col) {
@@ -166,6 +160,7 @@ public class Board {
       numFlag++;
     }
   }
+  
   public int getTotalMines(){
     return totalMines;
   }
