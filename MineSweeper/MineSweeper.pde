@@ -6,6 +6,7 @@ boolean firstClick = true;
 boolean lost = false; 
 int tick = 0; 
 int numFlag; 
+String difficulty = "medium";
 
 
 void setup(){
@@ -13,11 +14,19 @@ void setup(){
   rows = 10;
   cols = 10;
   squaresize = width / cols;
-  board = new Board(rows, cols, 20);
+  if (difficulty.equals("medium")) {
+    board = new Board(rows, cols, 20);
+  }
+  else if (difficulty.equals("easy")) {
+    board = new Board(rows, cols, 10);
+  }
+  else if (difficulty.equals("hard")) {
+    board = new Board(rows, cols, 30);
+  }
   drawSquares(board);
   numFlag = 20; 
   // make sure the parameters become changable and are variables instead 
-  
+
 }
 
 void draw(){
@@ -51,24 +60,35 @@ void mouseClicked() {
   if (mouseButton == RIGHT) {
     board.placeFlag(row, col);
   }
-  else if (!board.flagPlaced[row][col]) {
-    board.click(row, col);
-    
+  else if (firstClick) {
+    board.firstClick(row, col);
+    firstClick = false;
   }
-   if (board.getGrid()[row][col].getIsMine()){
-    
+  else if (!firstClick && mouseButton == LEFT && !board.flagPlaced[row][col] && board.getGrid()[row][col].getIsMine()){
     background(51);
     fill(255,255,255);
     text("You Lost", cols * squaresize / 2, rows * squaresize /2);
     text("Play again? Press: ", cols * squaresize / 2, rows * squaresize /2 + 30 );
     text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
-    lost = true; 
-
-    }
+    lost = true;
+   }
+  else if (!board.flagPlaced[row][col]) {
+    board.click(row, col);
+  }
 }
 
 void keyPressed(){
+  if (key == 'e') {
+    difficulty = "easy";
+  }
+  if (key == 'm') {
+    difficulty = "medium";
+  }
+  if (key == 'h') {
+    difficulty = "hard";
+  }
+  
   if (lost){
     if (key == 'y'){
       background(255);
@@ -76,15 +96,15 @@ void keyPressed(){
     else if (key == 'n'){
       System.out.println("4");
       System.exit(0);
-  
+
+    }
   }
-}
-if (key == 'w'){
+  if (key == 'w'){
     background(0);
     fill(255,255,255);
     text("You Won!", cols * squaresize / 2, rows * squaresize /2);
-}
-if (key == 'l'){
+  }
+  if (key == 'l'){
     background(51);
     fill(255,255,255);
     text("You Lost", cols * squaresize / 2, rows * squaresize /2);
@@ -92,15 +112,8 @@ if (key == 'l'){
     text("[Y]es", cols * squaresize / 2, rows * squaresize /2 + 50 );
     text("[N]o", cols * squaresize / 2 + 50 , rows * squaresize /2 + 50 );
     lost = true; 
+  }
 }
-}
-  
-
-
-
-  
-
-
 
 void drawSquares(Board board){
   for (int r = 0; r < rows; r++) {

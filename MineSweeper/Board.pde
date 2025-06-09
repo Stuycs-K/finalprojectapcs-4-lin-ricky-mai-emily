@@ -8,13 +8,13 @@ public class Board {
   private final color LIGHT_GREEN = color(135, 209, 82);
   private final color DARK_GREEN = color(99, 184, 68);
   private final color BLACK = color(0, 0, 0);
-  
+
   public Board() {
     rows = 10;
     cols = 10;
     totalMines = 10;
   }
-  
+
   public Board(int rows, int cols, int totalMines) {
     this.rows = rows;
     this.cols = cols;
@@ -22,23 +22,20 @@ public class Board {
     flagPlaced = new boolean[rows][cols];
     tileRevealed = new boolean[rows][cols];
     grid = new Tile[rows][cols];
-    int counter = 0; 
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
-        int randNum = (int) (Math.random() * 5);
-        //if (firstClick) {
-        //  grid[r][c] = new Tile(false, r, c);
-        //}
-        if (randNum == 1 && counter != totalMines ) {
-          grid[r][c] = new Tile(true, r, c);
-          counter++;
-        }
-        else {
-          grid[r][c] = new Tile(false, r, c);
-        }
+        grid[r][c] = new Tile(false, r, c);
       }
     }
-
+    int currentMines = 0;
+    while (currentMines < totalMines) {
+      int randomRow = (int) (Math.random() * rows);
+      int randomCol = (int) (Math.random() * cols);
+      if (!grid[randomRow][randomCol].getIsMine()) {
+        grid[randomRow][randomCol] = new Tile(true, randomRow, randomCol);
+        currentMines++;
+      }
+    }
   }
   
   public Tile[][] getGrid(){
@@ -78,17 +75,25 @@ public class Board {
 
   }
   
-    
-  public void click(int row, int col) {
+  public void firstClick(int row, int col) {
     //if firstClick is a mine, regenerate the board
-    if (firstClick && board.getGrid()[row][col].getIsMine()) {
-      board = new Board(rows, cols, 20);
+    if (firstClick) {
+      while (board.getGrid()[row][col].getIsMine() || board.getGrid()[row][col].getAdjacentMines() > 0) {
+        board = new Board(rows, cols, 20);
+      }
     }
     //if firstClick is not a mine, game continues
-    else if (firstClick && !board.getGrid()[row][col].getIsMine()) {
+    else if (firstClick && !board.getGrid()[row][col].getIsMine() && board.getGrid()[row][col].getAdjacentMines() == 0) {
       firstClick = false;
     }
     else {
+      boolean[][] visited = new boolean[board.rows][board.cols];
+      floodFill(row, col, visited);
+    }
+  }
+  
+  public void click(int row, int col) {
+    if (board.getGrid()[row][col].getAdjacentMines() == 0) {
       boolean[][] visited = new boolean[board.rows][board.cols];
       floodFill(row, col, visited);
     }
@@ -110,7 +115,7 @@ public class Board {
       }
     }
   }
-  
+    
   public void floodFill(int row, int col, boolean[][] visited) {
     if (row >= 0 && row < board.rows && col >= 0 && col < board.cols) {
       if (board.getGrid()[row][col].getAdjacentMines() == 0) {
@@ -162,6 +167,6 @@ public class Board {
     }
   }
   public int getTotalMines(){
-  return totalMines;
+    return totalMines;
   }
 }
