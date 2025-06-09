@@ -14,17 +14,9 @@ void setup(){
   rows = 10;
   cols = 10;
   squaresize = width / cols;
-  if (difficulty.equals("medium")) {
-    board = new Board(rows, cols, 20);
-  }
-  else if (difficulty.equals("easy")) {
-    board = new Board(rows, cols, 10);
-  }
-  else if (difficulty.equals("hard")) {
-    board = new Board(rows, cols, 30);
-  }
-  drawSquares(board);
+  board = new Board(rows, cols, 20);
   numFlag = 20; 
+  drawSquares(board);
   // make sure the parameters become changable and are variables instead 
 
 }
@@ -80,12 +72,27 @@ void mouseClicked() {
 void keyPressed(){
   if (key == 'e') {
     difficulty = "easy";
+    board = new Board(rows, cols, 10);
+    numFlag = 10;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (key == 'm') {
     difficulty = "medium";
+    board = new Board(rows, cols, 20);
+    numFlag = 20;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (key == 'h') {
     difficulty = "hard";
+    board = new Board(rows, cols, 30);
+    numFlag = 30;
+    tick = 0;
+    drawSquares(board);
+    firstClick = true;
   }
   if (lost){
     if (key == 'y'){
