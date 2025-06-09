@@ -78,8 +78,8 @@ public class Board {
 
   }
   
-    
-  public void click(int row, int col) {
+  
+  public void firstClick(int row, int col) {
     //if firstClick is a mine, regenerate the board
     if (firstClick) {
       while (board.getGrid()[row][col].getIsMine() || board.getGrid()[row][col].getAdjacentMines() > 0) {
@@ -91,6 +91,13 @@ public class Board {
       firstClick = false;
     }
     else {
+      boolean[][] visited = new boolean[board.rows][board.cols];
+      floodFill(row, col, visited);
+    }
+  }
+  
+  public void click(int row, int col) {
+    if (board.getGrid()[row][col].getAdjacentMines() == 0) {
       boolean[][] visited = new boolean[board.rows][board.cols];
       floodFill(row, col, visited);
     }
