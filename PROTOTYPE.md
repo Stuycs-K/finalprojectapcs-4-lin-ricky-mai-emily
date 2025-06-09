@@ -21,12 +21,12 @@ Critical features (Minimum Viable Product): We should be able to visually see th
 Diagrams: Not needed.  
 Nice to have features:  
 -Losing and wining screen  
--Animations  
+~-Animations  ~ We decided that this feature wasn't necessary. 
 -A scoreboard for the flags and time spent  
 -Different difficulties   
--Music and sharing your game  
--Leaderboard  
--Loading Screen  
+~-Music and sharing your game  ~ We didn't know how to code this
+~-Leaderboard  ~ We didn't know how to code this
+~-Loading Screen  ~ We decided we did not need this
 
 
      
