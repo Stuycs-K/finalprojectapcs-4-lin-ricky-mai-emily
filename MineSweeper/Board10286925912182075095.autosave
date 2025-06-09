@@ -42,26 +42,22 @@ public class Board {
     return grid;
   }
   
+  
+  
   public void firstClick(int row, int col) {
     //if firstClick is a mine, regenerate the board
     if (firstClick) {
       while (board.getGrid()[row][col].getIsMine() || board.getGrid()[row][col].getAdjacentMines() > 0) {
-        if (difficulty.equals("easy")) {
-          board = new Board(rows, cols, 10);
-        }
-        else if (difficulty.equals("medium")) {
-          board = new Board(rows, cols, 20);
-        }
-        else if (difficulty.equals("hard")) {
-          board = new Board(rows, cols, 30);
-        }
+        board = new Board(rows, cols, 20);
       }
     }
     //if firstClick is not a mine, game continues
     else if (firstClick && !board.getGrid()[row][col].getIsMine() && board.getGrid()[row][col].getAdjacentMines() == 0) {
+      firstClick = false;
+    }
+    else {
       boolean[][] visited = new boolean[board.rows][board.cols];
       floodFill(row, col, visited);
-      firstClick = false;
     }
   }
   
