@@ -8,13 +8,13 @@ public class Board {
   private final color LIGHT_GREEN = color(135, 209, 82);
   private final color DARK_GREEN = color(99, 184, 68);
   private final color BLACK = color(0, 0, 0);
-  
+
   public Board() {
     rows = 10;
     cols = 10;
     totalMines = 10;
   }
-  
+
   public Board(int rows, int cols, int totalMines) {
     this.rows = rows;
     this.cols = cols;
@@ -63,18 +63,11 @@ public class Board {
             text("" + numAdjMines, c * 50 + 20, r * 50 + 120);
           }
         }
-       }
       }
+    }
     textSize(25);
-
-
-  //  println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
-
-
     //println(board.getGrid()[row][col].getIsMine()); //debugging statement to check if a tile is a mine
-
   }
-  
   
   public void firstClick(int row, int col) {
     //if firstClick is a mine, regenerate the board
@@ -116,7 +109,7 @@ public class Board {
       }
     }
   }
-  
+    
   public void floodFill(int row, int col, boolean[][] visited) {
     if (row >= 0 && row < board.rows && col >= 0 && col < board.cols) {
       if (board.getGrid()[row][col].getAdjacentMines() == 0) {
@@ -167,7 +160,8 @@ public class Board {
       numFlag++;
     }
   }
+  
   public int getTotalMines(){
-  return totalMines;
+    return totalMines;
   }
 }
