@@ -59,3 +59,6 @@ I helped my partner with the mouse pressed method and finished the losing screen
 
 ### 2025-06-06 - Added counter in the header
 My partner and I merge everything and fixed it and I coded the flag and time in the header to work. 1 period 
+
+### 2025-06-08 - Added win screen and replayability
+I added the win screen and fixed losing screen's replay button. I also added cheat codes like skip to win, to lose, etc. I also helped my partner with her code too. 5 hours. 
