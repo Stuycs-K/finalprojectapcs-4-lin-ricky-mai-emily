@@ -5,9 +5,6 @@ public class Board {
   private Tile[][] grid;
   private boolean[][] flagPlaced;
   private boolean[][] tileRevealed;
-  private final color LIGHT_GREEN = color(135, 209, 82);
-  private final color DARK_GREEN = color(99, 184, 68);
-  private final color BLACK = color(0, 0, 0);
 
   public Board() {
     rows = 10;

@@ -18,12 +18,10 @@ void setup(){
   board = new Board(rows, cols, 20);
   numFlag = 20; 
   drawSquares(board);
-  // make sure the parameters become changable and are variables instead 
 }
 
 void draw(){
   if (won) {
-
     background(0);
     fill(255,255,255);
     text("You Won!", cols * squaresize / 2, rows * squaresize /2);
@@ -39,6 +37,7 @@ void draw(){
   textSize(20);
   text("Flags: " + numFlag, 200, 50);
   text("Time: " + tick / 60, 300, 50);
+  text("Difficulty: " + difficulty, 20, 50);
   int count = 0;
   int notMines = (rows * cols) - board.getTotalMines();
   for (int r = 0 ; r < rows; r++){
