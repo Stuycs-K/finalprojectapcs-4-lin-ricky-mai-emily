@@ -161,4 +161,7 @@ public class Board {
       numFlag++;
     }
   }
+  public int getTotalMines(){
+  return totalMines;
+  }
 }
