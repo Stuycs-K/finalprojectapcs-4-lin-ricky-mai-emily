@@ -32,10 +32,17 @@ Nice to have features:
      
 # Project Design
 
-UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
+UML Diagrams and descriptions of key algorithms, classes, and how things fit together.  
+Old UML Diagram:  
 <img width="606" alt="Screenshot 2025-05-21 at 11 31 45 PM" src="https://github.com/user-attachments/assets/493b86e8-ea0b-446f-8949-63782b3b3496" />
 
 The Minesweeper class will include the board and the methods setup, draw, and mouseClicked to update the board as the player clicks on tiles. The Tile class has boolean variables to indicate the status of the tile, whether it is revealed or not, flagged or not, or if it is a mine. It also includes the method countAdjMines to count how many mines are adjacent to it, and the number of mines will ultimately be displayed on the tile. The Board class contains the 2D grid of tiles and creates the initial board. It includes methods to reveal a tile, place a flag on a tile, and determine if the game has been won or is over. 
+
+New UML Diagram:  
+<img width="666" alt="Screenshot 2025-06-09 at 5 03 46 AM" src="https://github.com/user-attachments/assets/d66ea7f1-df63-4a5a-afa8-d61c6985f87c" />
+
+The Minesweeper class includes the methods setup, draw, mouseClicked, keyPressed, and drawSquares to update the board as the player clickes on tiles or presses a key on the keyboard. The Board class includes a constructor to initialize the board and the methods firstClick, click, floodFill, and placeFlag. These methods process the player's click and reveals the corresponding tiles. On the first click, a patch of land will be revealed and clicks after with no adjacent mines will reveal patches of land too. The placeFlag allows user to place and remove flag by right clicking. The Tile class contains a Tile constructor and getMethods to get the value of the instance variables in the class. Also, the Tile class contains countAdjMines to count how many mines are adjacent to it, and the number of mines will ultimately be displayed on the tile.
+
     
 # Intended pacing:
 
