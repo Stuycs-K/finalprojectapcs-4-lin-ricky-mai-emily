@@ -62,3 +62,5 @@ My partner and I merge everything and fixed it and I coded the flag and time in 
 
 2025-06-08 - Added win screen and replayability
 I added the win screen and fixed losing screen's replay button. I also added cheat codes like skip to win, to lose, etc. I also helped my partner with her code too. 5 hours.
+
+I believe this document accurately reflects the contributions of my teamate. - Emily
