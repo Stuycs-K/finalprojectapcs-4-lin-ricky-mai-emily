@@ -52,16 +52,16 @@ How you are breaking down the project and who is responsible for which parts.
 
 To break up the work, both of us can share the work of making the visual game and then doing the extra features by ourselves. 
 
-* Make the visual game (Finish by 6/2/25)
-  * Make the board grids ( Both of us )
-  * Make the buttons that are safe and has mines (Both of us )
+* Make the visual game (Finish by 6/2/25 both of us should work on this)
+  * Make the board grids ( Emily)
+  * Make the buttons that are safe and has mines (Ricky )
     ~Make the animations (This should be finished last as it is low priority so 5/31/25) (Both of us )~ Did not do animations
    
 * Losing and Winning screen (Finish by 6/8/25) (Ricky)
   
-* Scoreboard and leaderboard (Finish by 6/6/25) (Emily)
-  * A score of counting how many flags you have left
-  * A score of time
+* Scoreboard and leaderboard (Finish by 6/6/25) (Emily and Ricky)
+  * A score of counting how many flags you have left (Emily)
+  * A score of time (Ricky)
   ~Compare the timing of completing a certain difficulty.~ Did not have leaderboard
   
 * Different difficulties (6/8/25) (Both )
