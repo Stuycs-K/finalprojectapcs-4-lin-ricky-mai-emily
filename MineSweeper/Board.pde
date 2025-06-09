@@ -22,23 +22,20 @@ public class Board {
     flagPlaced = new boolean[rows][cols];
     tileRevealed = new boolean[rows][cols];
     grid = new Tile[rows][cols];
-    int counter = 0; 
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
-        int randNum = (int) (Math.random() * 5);
-        //if (firstClick) {
-        //  grid[r][c] = new Tile(false, r, c);
-        //}
-        if (randNum == 1 && counter != totalMines ) {
-          grid[r][c] = new Tile(true, r, c);
-          counter++;
-        }
-        else {
-          grid[r][c] = new Tile(false, r, c);
-        }
+        grid[r][c] = new Tile(false, r, c);
       }
     }
-
+    int currentMines = 0;
+    while (currentMines < totalMines) {
+      int randomRow = (int) (Math.random() * rows);
+      int randomCol = (int) (Math.random() * cols);
+      if (!grid[randomRow][randomCol].getIsMine()) {
+        grid[randomRow][randomCol] = new Tile(true, randomRow, randomCol);
+        currentMines++;
+      }
+    }
   }
   
   public Tile[][] getGrid(){
